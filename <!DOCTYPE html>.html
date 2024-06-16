@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multilingual Paragraph</title>
+</head>
+<body>
+    <h1 id="heading">My name is Suleiman and this is my updated project</h1>
+    <select id="language-select" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="hi">Hindi</option>
+        <option value="de">German</option>
+        <option value="it">Italian</option>
+        <option value="pt">Portuguese</option>
+        <option value="zh">Chinese</option>
+        <option value="ja">Japanese</option>
+        <option value="ko">Korean</option>
+    </select>
+    <p id="paragraph">Thank you, I hope you enjoyed my work.</p>
+    <p>good afternoon everyone</p>
+
+    <script>
+        function changeLanguage() {
+            var translations = {
+                "en": {
+                    "heading": "My name is Suleiman and this is my updated project",
+                    "paragraph": "Thank you, I hope you enjoyed my work."
+                },
+                "fr": {
+                    "heading": "Je m'appelle Suleiman et c'est mon projet mis à jour",
+                    "paragraph": "Merci, j'espère que vous avez apprécié mon travail."
+                },
+                "es": {
+                    "heading": "Mi nombre es Suleiman y este es mi proyecto actualizado",
+                    "paragraph": "Gracias, espero que hayan disfrutado mi trabajo."
+                },
+                "hi": {
+                    "heading": "मेरा नाम सुलेमान है और यह मेरा अद्यतन परियोजना है",
+                    "paragraph": "धन्यवाद, मुझे आशा है कि आपको मेरा काम पसंद आया होगा।"
+                },
+                "de": {
+                    "heading": "Mein Name ist Suleiman und dies ist mein aktualisiertes Projekt",
+                    "paragraph": "Danke, ich hoffe, Ihnen hat meine Arbeit gefallen."
+                },
+                "it": {
+                    "heading": "Il mio nome è Suleiman e questo è il mio progetto aggiornato",
+                    "paragraph": "Grazie, spero che il mio lavoro ti sia piaciuto."
+                },
+                "pt": {
+                    "heading": "Meu nome é Suleiman e este é meu projeto atualizado",
+                    "paragraph": "Obrigado, espero que tenha gostado do meu trabalho."
+                },
+                "zh": {
+                    "heading": "我叫苏莱曼，这是我更新的项目",
+                    "paragraph": "谢谢，希望你喜欢我的工作。"
+                },
+                "ja": {
+                    "heading": "私の名前はスレイマンです、これは私の更新されたプロジェクトです",
+                    "paragraph": "ありがとう、私の作品を楽しんでいただけたら幸いです。"
+                },
+                "ko": {
+                    "heading": "제 이름은 술레이만입니다. 이것은 저의 업데이트된 프로젝트입니다.",
+                    "paragraph": "감사합니다. 제 작업을 즐기셨기를 바랍니다."
+                }
+            };
+
+            var language = document.getElementById("language-select").value;
+            var heading = document.getElementById("heading");
+            var paragraph = document.getElementById("paragraph");
+
+            heading.innerHTML = translations[language].heading || translations["en"].heading;
+            paragraph.innerHTML = translations[language].paragraph || translations["en"].paragraph;
+
+            heading.lang = language;
+            paragraph.lang = language;
+        }
+    </script>
+</body>
+</html>
